@@ -9,7 +9,9 @@
  * @author Andres
  */
 public class calculadora extends javax.swing.JFrame {
-
+public float numero1;
+public float numero2;
+public String operador;
     /**
      * Creates new form calculadora
      */
@@ -117,6 +119,11 @@ public class calculadora extends javax.swing.JFrame {
         });
 
         jButton11.setText("+");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("-");
 
@@ -262,6 +269,10 @@ this.casilla.setText("");        // TODO add your handling code here:
     private void casillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_casillaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_casillaActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
