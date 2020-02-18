@@ -433,7 +433,7 @@ this.numero2=Double.parseDouble(this.casilla.getText());
  switch(this.operador){
      case "+":this.casilla.setText(Double.toString(this.numero1+this.numero2));
      break;
-     case "iva":this.casilla.setText(Double.toString(this.numero1+this.numero1*0.19));
+     case "iva":this.casilla.setText(Double.toString(this.numero2+this.numero2*0.19));
      break;
      case "√":this.casilla.setText(Double.toString(Math.sqrt(this.numero2)));
      break;
