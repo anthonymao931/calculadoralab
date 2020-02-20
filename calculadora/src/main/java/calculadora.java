@@ -458,7 +458,7 @@ this.numero2=Double.parseDouble(this.casilla.getText());
      break;
      case "iva":this.casilla.setText(Double.toString(this.numero2+this.numero2*0.19));
      break;
-     case "√":this.casilla.setText(Double.toString(Math.sqrt(this.numero2*-1)));
+     case "√":this.casilla.setText(Double.toString(Math.sqrt(this.numero2)));
      break;
      case "-":this.casilla.setText(Double.toString(this.numero1-this.numero2));
      break;

@@ -49,7 +49,7 @@ public class calculos {
         case 3:
             System.out.println("Digite el numero que quiera sacar raiz cuadrada: ");
             numero1= entrada.nextDouble();
-            raiz=Math.sqrt(numero1)*(-1);
+            raiz=Math.sqrt(numero1);
             System.out.println("El resultado de la raiz es: "+raiz);
             break;
         case 4:
