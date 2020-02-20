@@ -56,6 +56,7 @@ public String operador;
         jButton23 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -251,6 +252,14 @@ public String operador;
             }
         });
 
+        jButton24.setBackground(new java.awt.Color(255, 255, 255));
+        jButton24.setText("-#");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -313,8 +322,10 @@ public String operador;
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,7 +338,8 @@ public String operador;
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -357,18 +369,20 @@ public String operador;
                     .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 24, Short.MAX_VALUE))
         );
 
         pack();
@@ -433,9 +447,18 @@ this.numero2=Double.parseDouble(this.casilla.getText());
  switch(this.operador){
      case "+":this.casilla.setText(Double.toString(this.numero1+this.numero2));
      break;
+     case "sen":this.anguloradianes= Math.toRadians(this.numero2);
+     this.casilla.setText(Double.toString(Math.sin(this.anguloradianes)));
+     break;
+     case "cos":this.anguloradianes= Math.toRadians(this.numero2);
+     this.casilla.setText(Double.toString(Math.cos(this.anguloradianes)));
+     break;
+     case"tan":this.anguloradianes= Math.toRadians(this.numero2);
+     this.casilla.setText(Double.toString(Math.sin(this.anguloradianes)));
+     break;
      case "iva":this.casilla.setText(Double.toString(this.numero2+this.numero2*0.19));
      break;
-     case "√":this.casilla.setText(Double.toString(Math.sqrt(this.numero2)));
+     case "√":this.casilla.setText(Double.toString(Math.sqrt(this.numero2*-1)));
      break;
      case "-":this.casilla.setText(Double.toString(this.numero1-this.numero2));
      break;
@@ -481,27 +504,27 @@ this.casilla.setText(" ");        // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
- this.numero1=Double.parseDouble(this.casilla.getText());
+this.numero1=Double.parseDouble(this.casilla.getText());
 this.operador="√";
 this.casilla.setText(" "); // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
 this.numero1=Double.parseDouble(this.casilla.getText());
-this.anguloradianes= Math.toRadians(this.numero1);
-this.casilla.setText(Double.toString(Math.sin(this.anguloradianes)));
+this.operador="sen";
+this.casilla.setText(" ");
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
 this.numero1=Double.parseDouble(this.casilla.getText());
-this.anguloradianes= Math.toRadians(this.numero1);
-this.casilla.setText(Double.toString(Math.cos(this.anguloradianes)));    // TODO add your handling code here:
+this.operador="cos";
+this.casilla.setText(" ");    // TODO add your handling code here:
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
 this.numero1=Double.parseDouble(this.casilla.getText());
-this.anguloradianes= Math.toRadians(this.numero1);
-this.casilla.setText(Double.toString(Math.tan(this.anguloradianes)));   // TODO add your handling code here:
+this.operador="tan";
+this.casilla.setText(" ");   // TODO add your handling code here:
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
@@ -515,6 +538,11 @@ this.operador="iva";
 this.casilla.setText(" ");       // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
 
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+if(!(this.casilla.getText().contains("-"))){
+    this.casilla.setText(this.casilla.getText()+"-");        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton24ActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -568,6 +596,7 @@ this.casilla.setText(" ");       // TODO add your handling code here:
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
